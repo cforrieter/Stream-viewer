@@ -8,6 +8,8 @@ import (
 
 	"io/ioutil"
 
+	"os"
+
 	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 	"github.com/julienschmidt/httprouter"
@@ -39,7 +41,7 @@ func main() {
 	router.GET("/", handleRedirectToUI)
 	router.GET("/ui/*frontEndRoutes", handleUI)
 
-	log.Fatal(http.ListenAndServe(":80", router))
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 
 }
 
