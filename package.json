@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "postinstall": "vue-cli-service build"
+    "postinstall": "sed -i \"s/API_KEY/${API_KEY}/g\" src/main.js && sed -i \"s/CLIENT_ID/${CLIENT_ID}/g\" src/main.js && vue-cli-service build"
   },
   "dependencies": {
     "axios": "^0.18.0",
