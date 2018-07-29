@@ -6,6 +6,8 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"io/ioutil"
+
 	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 	"github.com/julienschmidt/httprouter"
@@ -34,8 +36,23 @@ func main() {
 	router.POST("/api/messages", handleNewMessages)
 	router.GET("/api/stats", handleGetStats)
 
+	router.GET("/", handleRedirectToUI)
+	router.GET("/ui/*frontEndRoutes", handleUI)
+
 	log.Fatal(http.ListenAndServe(":8080", router))
 
+}
+
+func handleUI(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	app, err := ioutil.ReadFile("dist/index.html")
+	if err != nil {
+		log.Fatal("problem serving front-end app")
+	}
+	w.Write(app)
+}
+
+func handleRedirectToUI(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	http.Redirect(w, r, "/ui/", 301)
 }
 
 func handleNewMessages(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
