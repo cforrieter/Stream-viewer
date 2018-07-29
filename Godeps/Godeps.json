@@ -1,0 +1,40 @@
+{
+	"ImportPath": "StreamViewer-Backend",
+	"GoVersion": "go1.10",
+	"GodepVersion": "v80",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/globalsign/mgo",
+			"Comment": "r2018.06.15",
+			"Rev": "113d3961e7311526535a1ef7042196563d442761"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/bson",
+			"Comment": "r2018.06.15",
+			"Rev": "113d3961e7311526535a1ef7042196563d442761"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/internal/json",
+			"Comment": "r2018.06.15",
+			"Rev": "113d3961e7311526535a1ef7042196563d442761"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/internal/sasl",
+			"Comment": "r2018.06.15",
+			"Rev": "113d3961e7311526535a1ef7042196563d442761"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/internal/scram",
+			"Comment": "r2018.06.15",
+			"Rev": "113d3961e7311526535a1ef7042196563d442761"
+		},
+		{
+			"ImportPath": "github.com/julienschmidt/httprouter",
+			"Comment": "v1.1-63-gadbc77e",
+			"Rev": "adbc77eec0d91467376ca515bc3a14b8434d0f18"
+		}
+	]
+}
