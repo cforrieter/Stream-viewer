@@ -39,7 +39,7 @@ func main() {
 	router.GET("/", handleRedirectToUI)
 	router.GET("/ui/*frontEndRoutes", handleUI)
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":80", router))
 
 }
 
