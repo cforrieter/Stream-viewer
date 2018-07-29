@@ -39,7 +39,7 @@ func main() {
 	router.GET("/api/stats", handleGetStats)
 
 	router.GET("/", handleRedirectToUI)
-	router.ServeFiles("/ui/*filepath", http.Dir("dist"))
+	router.GET("/ui/*filepath", handleUI)
 
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
 
